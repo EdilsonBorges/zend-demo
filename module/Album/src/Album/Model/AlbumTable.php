@@ -12,4 +12,10 @@
          $this->tableGateway = $tableGateway;
      }
 
+     public function fetchAll()
+     {
+         $resultSet = $this->tableGateway->select();
+         return $resultSet;
+     }
+
  }
