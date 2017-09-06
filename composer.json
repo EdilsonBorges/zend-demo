@@ -25,6 +25,9 @@
     "autoload-dev": {
         "psr-4": {
             "ApplicationTest\\": "module/Application/test/"
+        },
+        "psr-0": {
+            "Album": "module/Album/src/"
         }
     },
     "extra": [],
