@@ -6,6 +6,8 @@ use Zend\View\Model\ViewModel;
 
 class AlbumController extends AbstractActionController
 {
+    protected $albumTable;
+    
     public function indexAction()
     {
     }
