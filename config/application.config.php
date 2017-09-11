@@ -7,11 +7,8 @@
  */
 return [
     // Retrieve list of modules used in this application.
-    // 'modules' => require __DIR__ . '/modules.config.php',
-     'modules' => array(
-         'Application',
-         'Album',                  // <-- Add this line
-     ),
+    'modules' => require __DIR__ . '/modules.config.php',
+
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => [
         // This should be an array of paths in which modules reside.
