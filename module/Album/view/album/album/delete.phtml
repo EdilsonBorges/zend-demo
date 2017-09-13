@@ -14,3 +14,10 @@ $url = $this->url('album', array(
     'id'     => $this->id,
 ));
 ?>
+<form action="<?php echo $url; ?>" method="post">
+<div>
+    <input type="hidden" name="id" value="<?php echo (int) $album->id; ?>" />
+    <input type="submit" name="del" value="Yes" />
+    <input type="submit" name="del" value="No" />
+</div>
+</form>
