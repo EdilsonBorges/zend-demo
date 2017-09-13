@@ -84,7 +84,11 @@ class AlbumController extends AbstractActionController
 
     public function deleteAction()
     {
-        return new ViewModel();
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id) {
+            return $this->redirect()->toRoute('album');
+        }
+
     }
 
     public function getAlbumTable()
