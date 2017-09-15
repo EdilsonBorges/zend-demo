@@ -11,7 +11,7 @@ class PostService implements PostServiceInterface
 
 	public function findPost($id)
 	{
-		
+
 	}
 
 }
