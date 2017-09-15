@@ -2,6 +2,11 @@
  // Filename: /module/Blog/config/module.config.php
  return array(
      // This lines opens the configuration for the RouteManager
+     'view_manager' => [
+             'template_path_stack' => [
+                 __DIR__ . '/../view',
+             ],
+        ],
      'controllers' => array(
         'invokables' => array(
             'Blog\Controller\List' => 'Blog\Controller\ListController'
