@@ -33,6 +33,13 @@ class PostService implements PostServiceInterface
 	);
 	public function findAllPosts()
 	{
+		$allPosts = array();
+
+		foreach ($this->data as $index => $post) {
+		 $allPosts[] = $this->findPost($index);
+		}
+
+		return $allPosts;
 	}
 
 	public function findPost($id)
