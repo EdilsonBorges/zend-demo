@@ -44,5 +44,13 @@ class PostService implements PostServiceInterface
 
 	public function findPost($id)
 	{
+		$postData = $this->data[$id];
+
+		$model = new Post();
+		$model->setId($postData['id']);
+		$model->setTitle($postData['title']);
+		$model->setText($postData['text']);
+
+		return $model;
 	}
 }
