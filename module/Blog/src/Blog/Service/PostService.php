@@ -31,4 +31,11 @@ class PostService implements PostServiceInterface
 	     'text'  => 'This is our fifth blog post!'
 	 )
 	);
+	public function findAllPosts()
+	{
+	}
+
+	public function findPost($id)
+	{
+	}
 }
