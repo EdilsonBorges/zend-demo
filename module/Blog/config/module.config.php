@@ -2,6 +2,7 @@
  // Filename: /module/Blog/config/module.config.php
  return array(
      // This lines opens the configuration for the RouteManager
+     'service_manager' => array(),
      'view_manager' => [
              'template_path_stack' => [
                  __DIR__ . '/../view',
