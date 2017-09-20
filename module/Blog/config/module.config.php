@@ -2,11 +2,11 @@
  // Filename: /module/Blog/config/module.config.php
  return array(
      // This lines opens the configuration for the RouteManager
-     'service_manager' => [
-        'invokables' => [
-             'Blog\Service\PostServiceInterface' => 'Blog\Service\PostService'
-            ]
-        ],
+     'service_manager' => array(
+         'factories' => array(
+             'Blog\Service\PostServiceInterface' => 'Blog\Factory\PostServiceFactory'
+         )
+     ),
      'view_manager' => [
              'template_path_stack' => [
                  __DIR__ . '/../view',
