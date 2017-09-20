@@ -14,7 +14,7 @@
         ],
      'controllers' => array(
         'factories' => array(
-            'Blog\Controller\List' => 'Blog\Controller\ListControllerFactory'
+            'Blog\Controller\List' => 'Blog\Factory\ListControllerFactory'
         )
     ),
      'router' => array(
