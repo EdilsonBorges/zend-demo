@@ -14,8 +14,10 @@ class PostService implements PostServiceInterface
 
 	public function findAllPosts()
 	{
+		return $this->postMapper->findAll();
 	}
 	public function findPost($id)
 	{
+		return $this->postMapper->find($id);
 	}
 }
