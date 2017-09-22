@@ -12,6 +12,7 @@
      ),
      'service_manager' => array(
          'factories' => array(
+             'Blog\Mapper\PostMapperInterface'   => 'Blog\Factory\ZendDbSqlMapperFactory',
              'Blog\Service\PostServiceInterface' => 'Blog\Factory\PostServiceFactory',
              'Zend\Db\Adapter\Adapter'           => 'Zend\Db\Adapter\AdapterServiceFactory'
          )
