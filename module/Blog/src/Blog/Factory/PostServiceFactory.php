@@ -8,5 +8,10 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 class PostServiceFactory implements FactoryInterface
 {
-
+	public function createService(ServiceLocatorInterface $serviceLocator)
+	{
+		return new PostService(
+		 $serviceLocator->get('Blog\Mapper\PostMapperInterface')
+		);
+	}
 }
