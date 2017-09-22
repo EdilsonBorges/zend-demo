@@ -1,7 +1,15 @@
 <?php
  // Filename: /module/Blog/config/module.config.php
  return array(
-     // This lines opens the configuration for the RouteManager
+     'db' => array(
+         'driver'         => 'Pdo',
+         'username'       => 'SECRET_USERNAME',  //edit this
+         'password'       => 'SECRET_PASSWORD',  //edit this
+         'dsn'            => 'mysql:dbname=blog;host=localhost',
+         'driver_options' => array(
+             \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+         )
+     ),
      'service_manager' => array(
          'factories' => array(
              'Blog\Service\PostServiceInterface' => 'Blog\Factory\PostServiceFactory'
