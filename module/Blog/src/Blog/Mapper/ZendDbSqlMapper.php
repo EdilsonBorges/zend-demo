@@ -7,4 +7,8 @@ use Zend\Db\Adapter\AdapterInterface;
 
 class ZendDbSqlMapper implements PostMapperInterface
 {
+   /**
+    * @var \Zend\Db\Adapter\AdapterInterface
+    */
+   protected $dbAdapter;
 }
