@@ -9,13 +9,16 @@ class PostService implements PostServiceInterface
 
 	public function __construct(PostMapperInterface $postMapper)
 	{
-	 $this->postMapper = $postMapper;
+		$this->postMapper = $postMapper;
 	}
 
 	public function findAllPosts()
 	{
+		return $this->postMapper->findAll();
 	}
+
 	public function findPost($id)
 	{
+		return $this->postMapper->find($id);
 	}
 }
