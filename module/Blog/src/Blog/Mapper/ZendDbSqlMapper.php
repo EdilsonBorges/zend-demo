@@ -40,7 +40,7 @@ class ZendDbSqlMapper implements PostMapperInterface
 
       $stmt   = $sql->prepareStatementForSqlObject($select);
       $result = $stmt->execute();
-
-      return $result;
+      
+      \Zend\Debug\Debug::dump($result);die();
    }
 }
