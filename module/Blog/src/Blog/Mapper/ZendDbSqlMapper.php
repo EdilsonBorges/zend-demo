@@ -4,6 +4,9 @@ namespace Blog\Mapper;
 
 use Blog\Model\PostInterface;
 use Zend\Db\Adapter\AdapterInterface;
+use Zend\Db\Adapter\Driver\ResultInterface;
+use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\Sql\Sql;
 
 class ZendDbSqlMapper implements PostMapperInterface
 {
@@ -40,7 +43,13 @@ class ZendDbSqlMapper implements PostMapperInterface
 
       $stmt   = $sql->prepareStatementForSqlObject($select);
       $result = $stmt->execute();
-      
-      \Zend\Debug\Debug::dump($result);die();
+
+      if ($result instanceof ResultInterface && $result->isQueryResult()) {
+         $resultSet = new ResultSet();
+
+         \Zend\Debug\Debug::dump($resultSet->initialize($result));die();
+      }
+
+      die("no data");
    }
 }
