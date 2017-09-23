@@ -35,5 +35,12 @@ class ZendDbSqlMapper implements PostMapperInterface
     */
    public function findAll()
    {
+      $sql    = new Sql($this->dbAdapter);
+      $select = $sql->select('posts');
+
+      $stmt   = $sql->prepareStatementForSqlObject($select);
+      $result = $stmt->execute();
+
+      return $result;
    }
 }
