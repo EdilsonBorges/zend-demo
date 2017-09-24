@@ -7,6 +7,7 @@ use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\Adapter\Driver\ResultInterface;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\Sql\Sql;
+use Zend\Stdlib\Hydrator\HydratorInterface;
 
 class ZendDbSqlMapper implements PostMapperInterface
 {
@@ -14,14 +15,21 @@ class ZendDbSqlMapper implements PostMapperInterface
     * @var \Zend\Db\Adapter\AdapterInterface
     */
    protected $dbAdapter;
+   protected $hydrator;
+   protected $postPrototype;
 
    /**
     * @param AdapterInterface  $dbAdapter
     */
-   public function __construct(AdapterInterface $dbAdapter)
-   {
-       $this->dbAdapter = $dbAdapter;
-   }
+     public function __construct(
+         AdapterInterface $dbAdapter,
+         HydratorInterface $hydrator,
+         PostInterface $postPrototype
+     ) {
+         $this->dbAdapter      = $dbAdapter;
+         $this->hydrator       = $hydrator;
+         $this->postPrototype  = $postPrototype;
+     }
 
    /**
     * @param int|string $id
