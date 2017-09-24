@@ -47,9 +47,9 @@ class ZendDbSqlMapper implements PostMapperInterface
       if ($result instanceof ResultInterface && $result->isQueryResult()) {
          $resultSet = new ResultSet();
 
-         \Zend\Debug\Debug::dump($resultSet->initialize($result));die();
+         return $resultSet->initialize($result);
       }
 
-      die("no data");
+      return array();
    }
 }
