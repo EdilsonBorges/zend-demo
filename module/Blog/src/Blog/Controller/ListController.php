@@ -23,6 +23,10 @@ class ListController extends AbstractActionController
 
 	public function detailAction()
 	{
-		return new ViewModel();
+         $id = $this->params()->fromRoute('id');
+
+         return new ViewModel(array(
+             'post' => $this->postService->findPost($id)
+         ));
 	}
 }
