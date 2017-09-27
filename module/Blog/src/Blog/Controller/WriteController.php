@@ -9,4 +9,23 @@
 
  class WriteController extends AbstractActionController
  {
+     protected $postService;
+
+     protected $postForm;
+
+     public function __construct(
+         PostServiceInterface $postService,
+         FormInterface $postForm
+     ) {
+         $this->postService = $postService;
+         $this->postForm    = $postForm;
+     }
+
+     public function addAction()
+     {
+     }
+
+     public function editAction()
+     {
+     }
  }
